@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 
 const StarshipSearch = ({ onSearch }) => {
-  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const handleChange = (event) => {
-    setQuery(event.target.value);
+  const handleInputChange = (event) => {
+    setSearchQuery(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    onSearch(query);
+    onSearch(searchQuery);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleFormSubmit}>
       <input
         type="text"
-        value={query}
-        onChange={handleChange}
+        value={searchQuery}
+        onChange={handleInputChange}
         placeholder="Search for a starship..."
       />
       <button type="submit">Search</button>
